@@ -12,31 +12,48 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :scheduled %>
-    <%= form.datetime_select :scheduled, id: :visit_request_scheduled %>
+    <%= form.hidden_field :scheduled, id: :visit_request_scheduled %>
+    <br>
+    <label>Día de visita</label>
+    <div class="input-group date" data-provide="datepicker-inline">
+        <input type="text" class="form-control" value="<%= Date.today.strftime('%m-%d-%Y') %>">
+        <div class="input-group-addon">
+            <%= fa_icon "calendar" %>
+        </div>
+    </div>
+</div>
+<br>
+  <div class="field">
+    <label>Horario de Visita</label>
+    <select name="horarios" class="form-control">
+      <option value="volvo">08:00 - 10:00</option>
+      <option value="saab">10:00 - 12:00</option>
+      <option value="opel">12:00 - 14:00</option>
+      <option value="audi">16:00 - 18:00</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <label>Nombre de Organizador</label>
+    <%= form.text_field :visitor_name, id: :visit_request_visitor_name, class:'form-control' %>
+  </div>
+<br>
+  <div class="field">
+    <label>Email de organizador</label>
+    <%= form.text_field :visitor_email, id: :visit_request_visitor_email, class:'form-control' %>
+  </div>
+<br>
+  <div class="field">
+    <label>Tipo de recorrido</label>
+    <%= form.number_field :visit_type, id: :visit_request_visit_type, class:'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :visitor_name %>
-    <%= form.text_field :visitor_name, id: :visit_request_visitor_name %>
+    <%= form.hidden_field :approved, id: :visit_request_approved %>
   </div>
-
-  <div class="field">
-    <%= form.label :visitor_email %>
-    <%= form.text_field :visitor_email, id: :visit_request_visitor_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :visit_type %>
-    <%= form.number_field :visit_type, id: :visit_request_visit_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :approved %>
-    <%= form.check_box :approved, id: :visit_request_approved %>
-  </div>
-
+<br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Enviar Solicitud', class:'btn btn-success' %>
   </div>
+  <br>
 <% end %>

@@ -1,21 +1,67 @@
 @import "twitter/bootstrap/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
-// Glyphicons are not required by default, uncomment the following lines to enable them.
-//@glyphiconsEotPath: font-url("glyphicons-halflings-regular.eot");
-//@glyphiconsEotPath_iefix: font-url("glyphicons-halflings-regular.eot?#iefix");
-//@glyphiconsWoffPath: font-url("glyphicons-halflings-regular.woff");
-//@glyphiconsTtfPath: font-url("glyphicons-halflings-regular.ttf");
-//@glyphiconsSvgPath: font-url("glyphicons-halflings-regular.svg#glyphicons_halflingsregular");
-//
-//@import "twitter/bootstrap/glyphicons.less";
+@azul-puma: #21376D;
+@blanco: white;
 
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
-//
-// Example:
-// @link-color: #ff0000;
+body{
+  font-size: 16px;
+  color: #333;
+  padding-top: 50px;
+}
+
+section.home{
+  background-image: url('/sala-nezahualcoyotl.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 5em;
+  font-family: 'Roboto';
+  h1.high{
+    font-weight: 700;
+    font-size: 6em;
+    color: white;
+    text-shadow: 5px 5px 15px #333333;
+  }
+  p.high-white{
+    text-align: 400;
+    color: white;
+    text-shadow: 2px 2px 8px #000;
+    font-size: 1.2em;
+  }
+}
+
+section.info{
+  padding-top: 5em;
+  h2,h3{
+    font-family: 'Roboto';
+    color: @azul-puma;
+    font-weight: 500;
+  }
+}
+
+// NAVBAR
+.navbar-default{
+  background-color: @azul-puma;
+  color: @blanco;
+  border: none;
+  box-shadow: 0 5px 15px #333;
+}
+.navbar-default .navbar-nav > li > a{
+  color: @blanco;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  color: #ddd;
+}
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+  color: @blanco;
+}
+
+footer{
+  background-color: @azul-puma;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  color: white;
+}

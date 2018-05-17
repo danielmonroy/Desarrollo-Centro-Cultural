@@ -1,35 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="notice"><%= notice %></p>
 
-<h1>Visit Requests</h1>
+      <h1>Solicitudes de Visita</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Scheduled</th>
-      <th>Visitor name</th>
-      <th>Visitor email</th>
-      <th>Visit type</th>
-      <th>Approved</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Horario</th>
+            <th>Nombre de Organizador</th>
+            <th>Tipo de Visita</th>
+            <th>Aprobada</th>
+            <th>Guía asignado</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @visit_requests.each do |visit_request| %>
-      <tr>
-        <td><%= visit_request.scheduled %></td>
-        <td><%= visit_request.visitor_name %></td>
-        <td><%= visit_request.visitor_email %></td>
-        <td><%= visit_request.visit_type %></td>
-        <td><%= visit_request.approved %></td>
-        <td><%= link_to 'Show', visit_request %></td>
-        <td><%= link_to 'Edit', edit_visit_request_path(visit_request) %></td>
-        <td><%= link_to 'Destroy', visit_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @visit_requests.each do |visit_request| %>
+          <tr>
+            <td><%= visit_request.scheduled.strftime('%d-%m-%Y') %></td>
+            <td><%= visit_request.scheduled.strftime('%H:%M') %></td>
+            <td><%= visit_request.visitor_name %></td>
+            <td><%= visit_request.visit_type %></td>
+            <% if visit_request %>
+            <td>Aprobada</td>
+            <% else %>
+            <td>Pendiente</td>
+            <% end %>
+            <td>Azucena</td>
+            <td><%= link_to 'Aprobar', visit_request  %></td>
+            <td><%= link_to 'Cancelar', visit_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<br>
+      <br>
 
-<%= link_to 'New Visit Request', new_visit_request_path %>
+    </div>
+  </div>
+  
+</div>
