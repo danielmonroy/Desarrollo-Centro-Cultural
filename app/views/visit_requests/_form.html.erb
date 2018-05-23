@@ -45,7 +45,7 @@
 <br>
   <div class="field">
     <label>Tipo de recorrido</label>
-    <%= form.number_field :visit_type, id: :visit_request_visit_type, class:'form-control' %>
+    <%= form.select(:visit_type, options_for_select([['Visita CCU', 0], ['Date un Rol', 1]]), {}, class:"form-control" )%>
   </div>
 
   <div class="field">
