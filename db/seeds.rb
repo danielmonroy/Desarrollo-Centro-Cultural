@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 visit_requests = VisitRequest.create([{scheduled: Time.zone.parse('2018-07-11 21:00'),
-  visitor_name: 'José Ávila', visitor_email: 'joseavila@gmail.com', visit_type: 0},
+  visitor_name: 'José Ávila', visitor_email: 'joseavila@gmail.com', visit_type: 0, approved: false},
   {scheduled: Time.zone.parse('2018-06-19'), visitor_name: 'Erika Suárez',
-    visitor_email: 'esuarez@gmail.com', visit_type: 1}])
+    visitor_email: 'esuarez@gmail.com', visit_type: 1, approved: false}])
 
-users = User.create([{name: 'Orlando Apipilhuasco', email: 'orlando@ciencias.unam.mx'}])
+users = User.create([{name: 'Orlando Apipilhuasco', email: 'orlando@ciencias.unam.mx',
+  password: 'orlando'},{name: 'Daniel Monroy', email: 'danielmonroy@ciencias.unam.mx', password: 'daniel'},{name: 'Diego Magallanes', email: 'diego@ciencias.unam.mx', password: 'diegom'}])
 
 visits = Visit.create([{scheduled: Time.zone.parse('2018-06-04'), visitor_name: 'Vicenta Monroy',
   visitor_email: 'v_monroym@hotmail.com', visit_type: 1, user_id: 2},

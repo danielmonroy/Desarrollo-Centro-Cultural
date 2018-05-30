@@ -18,8 +18,8 @@
             <tr>
               <td><%= req.visitor_name %></td>
               <td><%= req.visitor_email %></td>
-              <td><%= req.visit_type %></td>
-              <td><%= req.scheduled %></td>
+              <td><%= req.visit_type == 0 ? "CCU" : "Date un Rol" %></td>
+              <td><%= req.scheduled.strftime('%Y-%m-%d') %></td>
               <td><button class="btn btn-success">Aprobar</button></td>
               <td><button class="btn btn-danger">Declinar</button></td>
             </tr>
@@ -45,10 +45,11 @@
           <tbody>
             <% @recorridos.each do |rec| %>
             <tr>
+              <td><%= User.find(rec.user_id).name %></td>
               <td><%= rec.visitor_name %></td>
               <td><%= rec.visitor_email %></td>
-              <td><%= rec.visit_type %></td>
-              <td><%= rec.scheduled %></td>
+              <td><%= rec.visit_type == 0 ? "CCU" : "Date un Rol" %></td>
+              <td><%= rec.scheduled.strftime('%Y-%m-%d') %></td>
             </tr>
             <% end %>
           </tbody>
@@ -64,7 +65,6 @@
             <tr>
               <th>Nombre</th>
               <th>Email</th>
-              <th>Estudia</th>
               <th>Fecha de ingreso</th>
             </tr>
           </thead>
@@ -73,7 +73,7 @@
             <tr>
               <td><%= user.name %></td>
               <td><%= user.email %></td>
-              <td><%= user.created_at %></td>
+              <td><%= user.created_at.strftime('%Y-%m-%d') %></td>
             </tr>
             <% end %>
           </tbody>
