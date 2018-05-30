@@ -37,12 +37,11 @@
                 </ul>
               </li>
               <li><%= link_to 'Agenda tu visita', new_visit_request_path %></li>
-              <li><a href="#">Multimedia</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacto <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Directorio</a></li>
-                  <li><a href="#">Servicio Social</a></li>
+                  <li><%= link_to 'Directorio', contact_index_path %></li>
+                  <li><%= link_to 'Servicio Social', contact_index_path %></li>
                 </ul>
               </li>
             </ul>

@@ -25,7 +25,7 @@ class VisitRequestsController < ApplicationController
   # POST /visit_requests.json
   def create
     @visit_request = VisitRequest.new(visit_request_params)
-
+    @visit_request.approved = false
     respond_to do |format|
       if @visit_request.save
         format.html { redirect_to @visit_request, notice: 'Visit request was successfully created.' }

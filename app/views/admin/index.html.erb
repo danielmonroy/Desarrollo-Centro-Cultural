@@ -1,7 +1,84 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      
+<section class="info">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Solicitudes de visitas:</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Solicitante</th>
+              <th>Email</th>
+              <th>Tipo de visita</th>
+              <th>Fecha</th>
+              <th colspan="2" width="20%"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @requests.each do |req| %>
+            <tr>
+              <td><%= req.visitor_name %></td>
+              <td><%= req.visitor_email %></td>
+              <td><%= req.visit_type %></td>
+              <td><%= req.scheduled %></td>
+              <td><button class="btn btn-success">Aprobar</button></td>
+              <td><button class="btn btn-danger">Declinar</button></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Próximos Recorridos:</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Guía</th>
+              <th>Solicitante</th>
+              <th>Email</th>
+              <th>Tipo de visita</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @recorridos.each do |rec| %>
+            <tr>
+              <td><%= rec.visitor_name %></td>
+              <td><%= rec.visitor_email %></td>
+              <td><%= rec.visit_type %></td>
+              <td><%= rec.scheduled %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Guías:</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Estudia</th>
+              <th>Fecha de ingreso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.created_at %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
+</section>
