@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= form.hidden_field :scheduled, id: :visit_request_scheduled %>
     <br>
     <label>Día de visita</label>
-    <div class="input-group date" data-provide="datepicker-inline">
-        <input type="text" class="form-control" value="<%= Date.today.strftime('%m-%d-%Y') %>">
+    <div class="input-group date datepicker" data-provide="datepicker-inline">
+        <input id="input-date-input" type="text" class="form-control" value="<%= Date.today.strftime('%d/%m/%Y') %>">
         <div class="input-group-addon">
             <%= fa_icon "calendar" %>
         </div>
     </div>
+    <%= form.hidden_field :scheduled, id: :visit_request_scheduled %>
 </div>
 <br>
   <div class="field">
     <label>Horario de Visita</label>
     <select name="horarios" class="form-control">
-      <option value="volvo">08:00 - 10:00</option>
-      <option value="saab">10:00 - 12:00</option>
-      <option value="opel">12:00 - 14:00</option>
-      <option value="audi">16:00 - 18:00</option>
+      <option value="08:00">08:00 - 10:00</option>
+      <option value="10:00">10:00 - 12:00</option>
+      <option value="12:00">12:00 - 14:00</option>
+      <option value="16:00">16:00 - 18:00</option>
     </select>
   </div>
   <br>
