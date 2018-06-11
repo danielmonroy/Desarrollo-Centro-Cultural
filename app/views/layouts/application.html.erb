@@ -78,10 +78,8 @@ Twitter:  <a href="https://twitter.com/CulturaUNAM">@CulturaUNAM</a>
     <script type="text/javascript">
       $('.datepicker').datepicker({
         format: 'dd/mm/yyyy',
-        language: 'es'
-      });
-      $('.datepicker').on('changeDate', function() {
-        $('#visit_request_scheduled').val($('#input-date-input').val());
+        language: 'es',
+        startDate: '+1d'
       });
     </script>
   </body>
